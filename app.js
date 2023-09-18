@@ -6,8 +6,7 @@ function saveNote() {
 }
 
 function deleteNote(keyNote){
-
-
+    
 }
 
 function createNote(keyNote, textNote){
@@ -21,3 +20,12 @@ function createNote(keyNote, textNote){
     div.appendChild(button);
     document.querySelector('.notes').appendChild(div);
 }
+
+function init(){
+    Object.keys(localStorage).forEach((keyNote) => {
+        const textNote = localStorage.getItem(keyNote);
+        createNote(keyNote,textNote);
+    });
+}
+
+init();
