@@ -19,6 +19,7 @@ function createNote(keyNote, textNote){
 
     const button = document.createElement('button');
     button.textContent ='Delete';
+    button.className = 'delete';
     button.onclick = () => {deleteNote(keyNote);};
     div.appendChild(button);
     document.querySelector('.notes').appendChild(div);
