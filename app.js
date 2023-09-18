@@ -6,17 +6,20 @@ function saveNote() {
 }
 
 function deleteNote(keyNote){
-    
+    localStorage.removeItem(keyNote);
+    document.querySelector(`#id${keyNote}`).remove();
+
 }
 
 function createNote(keyNote, textNote){
     const div = document.createElement('div');
-    div.id = keyNote;
+    div.id = 'id' + keyNote;
     const text = document.createTextNode(textNote);
     div.appendChild(text);
 
     const button = document.createElement('button');
     button.textContent ='Delete';
+    button.onclick = () => {deleteNote(keyNote);};
     div.appendChild(button);
     document.querySelector('.notes').appendChild(div);
 }
